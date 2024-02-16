@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>App Store</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+        }
+
+        .top-taskbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .top-taskbar button, .top-taskbar input {
+            margin: 0 5px;
+        }
+
+        .side-menu {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-menu .profile-section {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-menu .profile-section img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .side-menu ul li {
+            margin-bottom: 10px;
+        }
+
+        .side-menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .side-menu .taskbar {
+            background-color: #444;
+            padding: 10px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .side-menu .taskbar a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .side-menu .profile-taskbar {
+            background-color: #555;
+            margin-top: auto;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        button, input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        #appFileInput {
+            display: none;
+        }
+
+        #appList {
+            margin: 20px;
+        }
+
+        #storage {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        #storage h2 {
+            color: #333;
+        }
+
+        #savedApps {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #savedApps li {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+        }
+
+        .appIcon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .appName {
+            flex-grow: 1;
+        }
+
+        .appDownload {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        /* Additional styles for default apps */
+        #defaultApps {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #defaultApps li {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-taskbar">
+        <h1>App Store</h1>
+        <button id="addAppBtn">Add Application</button>
+        <input type="file" id="appFileInput" accept=".zip, .apk">
+        <button id="downloadBtn">Download</button>
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="side-menu">
+        <div class="profile-section">
+            <!-- Placeholder for user profile (add actual profile information) -->
+            <img src="user-avatar.png" alt="jaffer app">
+            <span>syed jaffer</span>
+        </div>
+        <ul>
+            <li class="taskbar"><a href="home">Home</a></li>
+            <li class="taskbar"><a href="games">Games</a></li>
+            <li class="taskbar"><a href="apps">Apps</a></li>
+            <li class="taskbar"><a href="charts">Charts</a></li>
+            <li class="taskbar profile-taskbar"><a href="my profile">My Profile</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <section id="appList">
+            <!-- Display default apps here -->
+            <ul id="defaultApps">
+                <li class="app-item">
+                    <img src="vidmate-icon.png" alt="Vidmate" class="appIcon">
+                    <div class="appName">Vidmate</div>
+                    <a href="vidmate-link" class="appDownload">Download</a>
+                </li>
+                <ul id="defaultApps">
+                <li class="app-item">
+                    <img src="vidmate-icon.png" alt="Vidmate" class="appIcon">
+                    <div class="appName">jaffer birds</div>
+                    <a href="https://jafferbirds.mydurable.com/" class="appDownload">Download</a>
+                </li>
+                   <li class="app-item">
+                    <img src="whatsapp-icon.png" alt="WhatsApp" class="appIcon">
+                    <div class="appName">core cutting app</div>
+                    <a href="https://corecuttingcontract.mydurable.com/" class="appDownload">Download</a>
+                </li>
+                <li class="app-item">
+                    <img src="whatsapp-icon.png" alt="WhatsApp" class="appIcon">
+                    <div class="appName">WhatsApp</div>
+                    <a href="whatsapp-link" class="appDownload">Download</a>
+                </li>
+                <li class="app-item">
+                    <img src="instagram-icon.png" alt="Instagram" class="appIcon">
+                    <div class="appName">Instagram</div>
+                    <a href="instagram-link" class="appDownload">Download</a>
+                </li>
+                <li class="app-item">
+                    <img src="facebook-icon.png" alt="Facebook" class="appIcon">
+                    <div class="appName">Facebook</div>
+                    <a href="facebook-link" class="appDownload">Download</a>
+                </li>
+                <li class="app-item">
+                    <img src="twitter-icon.png" alt="Twitter" class="appIcon">
+                    <div class="appName">Twitter</div>
+                    <a href="twitter-link" class="appDownload">Download</a>
+                </li>
+                <li class="app-item">
+                    <img src="youtube-icon.png" alt="YouTube" class="appIcon">
+                    <div class="appName">YouTube</div>
+                    <a href="youtube-link" class="appDownload">Download</a>
+                </li>
+                <!-- Add other default apps in a similar manner -->
+            </ul>
+        </section>
+
+        <section id="storage">
+            <h2>My Apps</h2>
+            <ul id="savedApps">
+                <!-- Display saved apps here -->
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Load saved apps from local storage when the page loads
+        window.addEventListener('load', function () {
+            loadSavedApps();
+        });
+
+        document.getElementById('addAppBtn').addEventListener('click', function() {
+            document.getElementById('appFileInput').click();
+        });
+
+        document.getElementById('appFileInput').addEventListener('change', function(event) {
+            var selectedFile = event.target.files[0];
+            if (selectedFile) {
+                var appName = prompt("Enter the name of the application:");
+                if (appName) {
+                    var appItem = createAppItem(appName, selectedFile);
+                    document.getElementById('savedApps').appendChild(appItem);
+
+                    // Save the added app to local storage
+                    saveAppToLocalStorage(appName, selectedFile);
+                }
+            }
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            var selectedApps = document.querySelectorAll('.appDownload');
+            selectedApps.forEach(function(appDownload) {
+                appDownload.click();
+            });
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', function() {
+            var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            var appItems = document.querySelectorAll('.app-item');
+
+            // Hide all app items and show only those matching the search query
+            appItems.forEach(function(appItem) {
+                var appName = appItem.querySelector('.appName').textContent.toLowerCase();
+                if (appName.includes(searchQuery)) {
+                    appItem.style.display = 'flex';
+                } else {
+                    appItem.style.display = 'none';
+                }
+            });
+        });
+
+        // Function to load saved apps from local storage
+        function loadSavedApps() {
+            var savedApps = JSON.parse(localStorage.getItem('savedApps')) || [];
+
+            savedApps.forEach(function(app) {
+                var appItem = createAppItem(app.name, app.file);
+                document.getElementById('savedApps').appendChild(appItem);
+            });
+        }
+
+        // Function to save an app to local storage
+        function saveAppToLocalStorage(name, file) {
+            var savedApps = JSON.parse(localStorage.getItem('savedApps')) || [];
+            savedApps.push({ name: name, file: file });
+            localStorage.setItem('savedApps', JSON.stringify(savedApps));
+        }
+
+        // Function to create an app item
+        function createAppItem(appName, file) {
+            var appItem = document.createElement('li');
+            appItem.classList.add('app-item');
+
+            // Create and append an icon (replace the icon URL with your own)
+            var appIcon = document.createElement('img');
+            appIcon.src = 'default-icon.png'; // Placeholder icon URL
+            appIcon.alt = 'App Icon';
+            appIcon.classList.add('appIcon');
+            appItem.appendChild(appIcon);
+
+            // Create and append the app name
+            var appNameElement = document.createElement('div');
+            appNameElement.textContent = appName;
+            appNameElement.classList.add('appName');
+            appItem.appendChild(appNameElement);
+
+            // Create and append the download link
+            var appDownload = document.createElement('a');
+            appDownload.textContent = 'Download';
+            appDownload.classList.add('appDownload');
+            appDownload.href = createDownloadLink(file);
+            appDownload.download = appName + '.apk'; // Set the desired APK file name
+            appItem.appendChild(appDownload);
+
+            return appItem;
+        }
+
+        // Function to create a download link for the provided file
+        function createDownloadLink(file) {
+            var blob = new Blob([file], { type: file.type });
+            return URL.createObjectURL(blob);
+        }
+    </script>
+
+</body>
+</html>
